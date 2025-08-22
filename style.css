@@ -1,0 +1,89 @@
+/* General body styling */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/*
+  ========================================
+  FLEXBOX for the Header
+  ========================================
+  Creates a flexible navigation bar.
+*/
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5e6d3; /* Light beige color */
+    border-bottom: 2px solid #d4a578;
+}
+
+.flex-container h1 {
+    margin: 0;
+    color: #5c3a26;
+}
+
+.flex-container nav a {
+    text-decoration: none;
+    color: #5c3a26;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/*
+  ========================================
+  GRID for the Menu Items
+  ========================================
+  Arranges the products in a clean, two-column grid.
+*/
+.grid-container {
+    display: grid;
+    /* Defines two columns with an equal fraction of the available space */
+    grid-template-columns: 1fr 1fr;
+    gap: 30px; /* Space between the items */
+    padding: 30px;
+}
+
+.grid-item {
+    background-color: #fcf4ec;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.grid-item img {
+    width: 100%; /* Makes the image responsive */
+    height: auto;
+    border-radius: 4px;
+}
+
+.section-title {
+    text-align: center;
+    color: #5c3a26;
+    margin-top: 40px;
+}
+
+/*
+  ========================================
+  MEDIA QUERY for smaller screens (e.g., phones)
+  ========================================
+  Changes the layout from 2 columns to 1 column for easier viewing.
+*/
+@media (max-width: 600px) {
+    /* Changes Flexbox header to a column layout */
+    .flex-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .flex-container nav a {
+        margin: 5px 10px;
+    }
+
+    /* Changes the grid from 2 columns to 1 column */
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
